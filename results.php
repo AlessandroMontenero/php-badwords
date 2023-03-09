@@ -10,14 +10,20 @@
     <?php 
 
     $textArray = explode(' ', $_POST['text']);
+    $nOfWords = count($textArray);
+    $nOfChar = 0;
     foreach($textArray as &$word) {
-        if ($word == $_POST['badword']) {
-            $word = '***';
+        $nOfChar = $nOfChar + strlen($word);
+        if (strtolower($word) == strtolower($_POST['badword'])) {
+            $word = str_repeat('*', strlen($word));
         };
     };
     $censuredText = implode(" ", $textArray);
+    
     ?>
-    Original Text: <?= $_POST['text'] ?><br>
+
+
+    Original Text: <?= $_POST['text'] ?> (<?= $nOfWords ?> words, <?= $nOfChar ?> characters)<br>
     Censured Text: <?= $censuredText ?><br>
 
 
