@@ -10,7 +10,7 @@
     <main>
       <form action="results.php" method="post"><br>
         Text: <textarea name="text" id="text" cols="30" rows="10"></textarea><br>
-        Bad Words: <input type="text" name="badword" id="badword"><br>
+        Bad Word: <input type="text" name="badword" id="badword"><br>
         <input type="submit">
       </form>
     </main>
